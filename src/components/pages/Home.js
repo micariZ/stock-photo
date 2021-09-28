@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "../NavBar";
 import Hero from "../Hero";
 import ArtistList from "../ArtistList";
 import CollectionList from "../CollectionList";

@@ -7,6 +7,7 @@ Variables
   --theme-color: rgb(51, 160, 128);
   --font-color-main: white;
   --font-color-text: rgb(116, 118, 116);
+  --nav-side-padding: 1.8rem;
 }
 
 /*
@@ -38,7 +39,13 @@ ul {
 }
 a {
   text-decoration: none;
+  color: var(--font-color-main);
 }
+
+a:hover {
+  opacity: 0.8;
+}
+
 h1,
 h2,
 h3,
@@ -94,8 +101,24 @@ Global classes
 ===============
 */
 
+button {
+  border-style: none;
+  background: transparent;
+}
+
 .container {
   margin: 0rem 6rem;
+}
+
+.title {
+  font-weight: bold;
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: 2.2rem;
+}
+
+.show {
+  visibility: visible;
 }
 
 .btn {
@@ -134,8 +157,6 @@ Global classes
 }
 
 .search-icon {
-  background-color: transparent;
-  border-style: none;
   color: var(--font-color-text);
   font-size: 2rem;
   padding: 10px;

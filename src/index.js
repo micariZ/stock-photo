@@ -4,10 +4,13 @@ import reportWebVitals from "./reportWebVitals";
 import "./style/normalize.css";
 import "./style/globalStyle.css";
 import App from "./App";
+import { GlobalProvider } from "./globalContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <GlobalProvider>
+      <App />
+    </GlobalProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
