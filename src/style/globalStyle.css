@@ -8,6 +8,8 @@ Variables
   --font-color-main: white;
   --font-color-text: rgb(116, 118, 116);
   --nav-side-padding: 1.8rem;
+  --default-background-color: rgb(47, 45, 53);
+  --default-transition: all 0.3s linear;
 }
 
 /*
@@ -107,7 +109,9 @@ button {
 }
 
 .container {
-  margin: 0rem 6rem;
+  /* margin: 0rem 6rem; */
+  max-width: 1400px;
+  margin: auto;
 }
 
 .title {
@@ -160,4 +164,45 @@ button {
   color: var(--font-color-text);
   font-size: 2rem;
   padding: 10px;
+}
+
+.grid-6 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 300px);
+  column-gap: 0.2rem;
+  row-gap: 0.2rem;
+  overflow: hidden;
+}
+
+.gallery-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.gallery-header {
+  margin: 10px 0;
+}
+
+.gallery-header p {
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .grid-6 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+
+  .gallery-image-container {
+    flex-grow: 1;
+  }
+
+  .gallery-image {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+  }
 }
