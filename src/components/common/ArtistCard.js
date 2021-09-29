@@ -5,7 +5,7 @@ function ArtistCard({ name, thumbnail, workPreview }) {
     backgroundImage: `url(${workPreview}) `,
   };
   return (
-    <div className="user-card-container" style={backgroundStyle}>
+    <div className="user-card-container round-border" style={backgroundStyle}>
       <div className="user-card">
         <div className="user-card-content">
           <img src={thumbnail} alt="" className="user-thumb" />

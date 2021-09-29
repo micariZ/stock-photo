@@ -4,7 +4,8 @@ import ArtistList from "../ArtistList";
 import CollectionList from "../CollectionList";
 import GalleryGrid from "../common/GalleryGrid6";
 import imageData from "../../data/imageData";
-import userData from "..//../data/userData";
+import userData from "../../data/userData";
+import collectionData from "../../data/collectionData";
 
 function Home() {
   const title = "You might like these";
@@ -15,7 +16,7 @@ function Home() {
       <section className="container">
         <GalleryGrid imageData={imageData} title={title} info={info} />
         <ArtistList userData={userData} />
-        <CollectionList></CollectionList>
+        <CollectionList collectionData={collectionData}></CollectionList>
       </section>
     </>
   );

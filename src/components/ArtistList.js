@@ -12,7 +12,7 @@ function ArtistList({ userData }) {
       <h2>Featured artists</h2>
       <div className="artists-list">
         {userData.slice(0, maxUser).map((user) => (
-          <ArtistCard {...user} />
+          <ArtistCard key={user.id} {...user} />
         ))}
       </div>
     </section>

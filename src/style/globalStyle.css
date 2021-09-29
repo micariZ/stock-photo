@@ -109,7 +109,7 @@ button {
 }
 
 .container {
-  /* margin: 0rem 6rem; */
+  overflow: hidden;
   max-width: 1400px;
   margin: auto;
 }
@@ -138,6 +138,10 @@ button {
 .btn:hover {
   background-color: #167358;
   cursor: pointer;
+}
+
+.round-border {
+  border-radius: 10px;
 }
 
 .search-container {
