@@ -26,6 +26,7 @@
 
 .nav-header .search-container {
   flex-grow: 1;
+  display: none;
 }
 
 .nav-header:hover {
@@ -80,5 +81,9 @@
 
   .sidebar-button {
     display: none;
+  }
+
+  .nav-header .search-container {
+    display: flex;
   }
 }

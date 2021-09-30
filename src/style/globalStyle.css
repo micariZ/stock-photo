@@ -112,6 +112,7 @@ button {
   overflow: hidden;
   max-width: 1400px;
   margin: auto;
+  margin-bottom: 50px;
 }
 
 .title {

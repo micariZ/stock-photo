@@ -1,10 +1,10 @@
 .sidebar {
-  right: -100vw;
+  right: -110%;
   position: fixed;
   height: 100%;
   width: 100%;
   background-color: var(--default-background-color);
-  z-index: 2;
+  z-index: 9;
   transition: right 0.4s;
   color: var(--font-color-main);
 }
