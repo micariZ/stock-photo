@@ -49,10 +49,12 @@
   display: none;
 }
 
-.nav_item {
-  display: inline;
-  margin: 0rem 8rem;
+.nav-item {
+  display: inline-block;
+  margin: 1rem 8rem;
   font-size: 1.7rem;
+  cursor: pointer;
+  height: 100%;
 }
 
 .sidebar-button {

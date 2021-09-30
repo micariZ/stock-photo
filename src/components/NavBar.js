@@ -8,17 +8,21 @@ import { useHistory, useLocation } from "react-router-dom";
 import SearchBar from "./common/SearchBar";
 
 function NavBar() {
-  const { isSidebarOpen, openSidebar, closeSidebar } = useGlobalContext();
+  const {
+    isSidebarOpen,
+    openSidebar,
+    closeSidebar,
+    openSubmenu,
+    closeSubmenu,
+  } = useGlobalContext();
   const history = useHistory();
   const path = useLocation();
-  const [showDetailedVersion, setshowDetailedVersion] = useState(
-    path.pathname !== "/"
-  );
+  const [showDetailedVersion, setshowDetailedVersion] = useState(false);
 
   const listenScrollEvent = () => {
     if (window.scrollY > 300) {
       setshowDetailedVersion(true);
-    } else {
+    } else if (path.pathname === "/") {
       setshowDetailedVersion(false);
     }
   };
@@ -28,8 +32,28 @@ function NavBar() {
     return () => window.removeEventListener("scroll", listenScrollEvent);
   }, []);
 
+  useEffect(() => {
+    setshowDetailedVersion(path.pathname !== "/");
+  }, [path.pathname]);
+
   const handleSidebarClick = () => {
     isSidebarOpen ? closeSidebar() : openSidebar();
+  };
+
+  const handleMouseOver = (e) => {
+    if (
+      !e.target.classList.contains("nav-link") &&
+      !e.target.classList.contains("nav-item")
+    ) {
+      closeSubmenu();
+    }
+  };
+
+  const handleMouseOverItem = (e) => {
+    const temp = e.target.getBoundingClientRect();
+    const left = (temp.left + temp.right) / 2;
+    const bottom = temp.bottom;
+    openSubmenu(e.target.innerHTML, { left, bottom });
   };
 
   const directHome = () => {
@@ -39,7 +63,10 @@ function NavBar() {
   };
 
   return (
-    <nav className={showDetailedVersion ? "nav nav-dark" : "nav"}>
+    <nav
+      onMouseOver={handleMouseOver}
+      className={showDetailedVersion ? "nav nav-dark" : "nav"}
+    >
       <div className="nav-header" onClick={directHome}>
         <img src={logo} alt="logo" className="nav_logo" />
         <p className="nav-title">PhotoStock</p>
@@ -52,7 +79,7 @@ function NavBar() {
 
       <ul className="nav-link">
         {navData.map((item, idx) => (
-          <li key={idx} className="nav_item">
+          <li onMouseOver={handleMouseOverItem} key={idx} className="nav-item">
             {item.page}
           </li>
         ))}

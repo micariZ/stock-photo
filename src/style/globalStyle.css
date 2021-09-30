@@ -144,6 +144,17 @@ button {
   border-radius: 10px;
 }
 
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--theme-color);
+  color: var(--font-color-main);
+  font-size: 5rem;
+}
+
 .search-container {
   display: flex;
   justify-content: space-between;
@@ -179,6 +190,18 @@ button {
   overflow: hidden;
 }
 
+.col-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.col-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.col-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .gallery-image {
   height: 100%;
   width: 100%;
@@ -190,6 +213,42 @@ button {
 }
 
 .gallery-header p {
+  font-size: 1.5rem;
+}
+
+.submenu {
+  opacity: 0;
+  position: fixed;
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem 2rem;
+  z-index: 10;
+  transition: var(--default-transition);
+}
+
+.submenu.show {
+  /* display: block; */
+  opacity: 1;
+}
+
+.submenu h4 {
+  font-size: 2rem;
+  margin-bottom: 1.4rem;
+}
+
+.submenu-content,
+.submenu-content a {
+  color: var(--font-color-text);
+}
+
+.submenu-content a {
+  margin-left: 1rem;
+}
+
+.submenu-content {
+  display: grid;
+  grid-auto-columns: 0;
+  gap: 1rem 3rem;
   font-size: 1.5rem;
 }
 

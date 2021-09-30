@@ -7,7 +7,7 @@ import { useGlobalContext } from "../globalContext";
 function Sidebar() {
   const { isSidebarOpen, closeSidebar } = useGlobalContext();
   return (
-    <section className={isSidebarOpen ? "sidebar show" : "sidebar"}>
+    <aside className={isSidebarOpen ? "sidebar show" : "sidebar"}>
       <div className="sidebar-content">
         <h2 className="title nav-section">
           <Link to="/" onClick={closeSidebar}>
@@ -36,7 +36,7 @@ function Sidebar() {
           );
         })}
       </div>
-    </section>
+    </aside>
   );
 }
 

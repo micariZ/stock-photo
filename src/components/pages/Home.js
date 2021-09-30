@@ -12,11 +12,11 @@ function Home() {
   const info = "based on images you recently viewed";
   return (
     <>
-      <Hero></Hero>
+      <Hero />
       <section className="container">
         <GalleryGrid imageData={imageData} title={title} info={info} />
         <ArtistList userData={userData} />
-        <CollectionList collectionData={collectionData}></CollectionList>
+        <CollectionList collectionData={collectionData} />{" "}
       </section>
     </>
   );

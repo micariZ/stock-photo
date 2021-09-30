@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { SCREEN_SIZE_BREAKPOINT } from "./config";
+import navData from "./data/navData";
 
 const GlobalContext = React.createContext();
 
@@ -8,6 +9,9 @@ export const GlobalProvider = ({ children }) => {
   const [isWideScreen, setIsWideScreen] = useState(
     window.innerWidth >= 1024 ? true : false
   );
+  const [isSubmenuOpen, setisSubmenuOpen] = useState(false);
+  const [location, setLocation] = useState({});
+  const [menuContent, setmenuContent] = useState({ page: "", links: [] });
 
   const listenResizeEvent = () => {
     if (window.innerWidth < SCREEN_SIZE_BREAKPOINT) {
@@ -29,9 +33,30 @@ export const GlobalProvider = ({ children }) => {
     setIsSidebarOpen(false);
   };
 
+  const openSubmenu = (page, location) => {
+    const content = navData.find((item) => item.page === page);
+    setLocation(location);
+    setmenuContent(content);
+    setisSubmenuOpen(true);
+  };
+
+  const closeSubmenu = () => {
+    setisSubmenuOpen(false);
+  };
+
   return (
     <GlobalContext.Provider
-      value={{ isWideScreen, isSidebarOpen, openSidebar, closeSidebar }}
+      value={{
+        isSubmenuOpen,
+        isWideScreen,
+        isSidebarOpen,
+        location,
+        menuContent,
+        openSidebar,
+        closeSidebar,
+        openSubmenu,
+        closeSubmenu,
+      }}
     >
       {children}
     </GlobalContext.Provider>
