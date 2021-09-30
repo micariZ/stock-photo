@@ -39,7 +39,7 @@ const collectionList = [
     ],
   },
   {
-    id: 0,
+    id: 3,
     name: "nature",
     image_num: 203,
     thumbnail:
@@ -52,7 +52,7 @@ const collectionList = [
     ],
   },
   {
-    id: 1,
+    id: 4,
     name: "national pancake day",
     image_num: 83,
     thumbnail:
@@ -65,7 +65,7 @@ const collectionList = [
     ],
   },
   {
-    id: 2,
+    id: 5,
     name: "backgrounds",
     image_num: 500,
     thumbnail:

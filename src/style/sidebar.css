@@ -3,7 +3,7 @@
   position: fixed;
   height: 100%;
   width: 100%;
-  background-color: rgb(61, 60, 70);
+  background-color: var(--default-background-color);
   z-index: 2;
   transition: right 0.4s;
   color: var(--font-color-main);

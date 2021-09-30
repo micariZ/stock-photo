@@ -2,13 +2,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: black; */
   background-color: transparent;
   color: var(--font-color-main);
-  padding: 0.4rem var(--nav-side-padding);
+  padding: 1rem var(--nav-side-padding);
   position: fixed;
   width: 100%;
   z-index: 10;
+}
+
+.nav-dark {
+  background-color: var(--default-background-color);
 }
 
 .sign-btn {
@@ -18,6 +21,11 @@
 .nav-header {
   display: flex;
   align-items: center;
+  flex-grow: 1;
+}
+
+.nav-header .search-container {
+  flex-grow: 1;
 }
 
 .nav-header:hover {
@@ -30,10 +38,10 @@
   border-radius: 8px;
 }
 
-.nav_title {
+.nav-title {
   font-size: 1.9rem;
   margin-bottom: 0;
-  margin-left: 10px;
+  margin: 0 10px;
   font-weight: 600;
 }
 

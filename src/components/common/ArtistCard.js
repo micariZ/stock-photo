@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 function ArtistCard({ name, thumbnail, workPreview }) {
   const backgroundStyle = {
