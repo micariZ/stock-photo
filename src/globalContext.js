@@ -45,6 +45,12 @@ export const GlobalProvider = ({ children }) => {
     setisSubmenuOpen(false);
   };
 
+  const cleanAll = () => {
+    setSearchTerm([]);
+    setisSubmenuOpen(false);
+    setisSubmenuOpen(false);
+  };
+
   return (
     <GlobalContext.Provider
       value={{
@@ -59,6 +65,7 @@ export const GlobalProvider = ({ children }) => {
         openSubmenu,
         closeSubmenu,
         setSearchTerm,
+        cleanAll,
       }}
     >
       {children}

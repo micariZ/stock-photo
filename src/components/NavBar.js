@@ -14,6 +14,7 @@ function NavBar() {
     closeSidebar,
     openSubmenu,
     closeSubmenu,
+    cleanAll,
   } = useGlobalContext();
   const history = useHistory();
   const path = useLocation();
@@ -28,12 +29,10 @@ function NavBar() {
   };
 
   useEffect(() => {
+    listenScrollEvent();
+    setshowDetailedVersion(path.pathname !== "/");
     window.addEventListener("scroll", listenScrollEvent);
     return () => window.removeEventListener("scroll", listenScrollEvent);
-  }, []);
-
-  useEffect(() => {
-    setshowDetailedVersion(path.pathname !== "/");
   }, [path.pathname]);
 
   const handleSidebarClick = () => {
@@ -58,7 +57,7 @@ function NavBar() {
 
   const directHome = () => {
     history.push(`/`);
-    closeSidebar();
+    cleanAll();
     setshowDetailedVersion(false);
   };
 
@@ -67,9 +66,11 @@ function NavBar() {
       onMouseOver={handleMouseOver}
       className={showDetailedVersion ? "nav nav-dark" : "nav"}
     >
-      <div className="nav-header" onClick={directHome}>
-        <img src={logo} alt="logo" className="nav_logo" />
-        <p className="nav-title">PhotoStock</p>
+      <div className="nav-header">
+        <img src={logo} alt="logo" className="nav_logo" onClick={directHome} />
+        <p className="nav-title" onClick={directHome}>
+          PhotoStock
+        </p>
         {showDetailedVersion && <SearchBar />}
       </div>
 

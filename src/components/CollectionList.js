@@ -39,7 +39,7 @@ function CollectionList({ collectionData }) {
 
   return (
     <section>
-      <h2>Popular Collections</h2>
+      <h2 className="section-title">Popular Collections</h2>
       <div
         className="collection-container"
         onMouseEnter={() => {

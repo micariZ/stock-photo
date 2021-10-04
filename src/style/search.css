@@ -1,0 +1,22 @@
+.search {
+  padding-top: 100px;
+}
+.search-container {
+  display: flex;
+  gap: 0 1.5rem;
+  margin-top: 2rem;
+}
+
+.search-col {
+  max-width: 30vw;
+}
+
+.search-col .figure {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.search-img {
+  width: 100%;
+  object-fit: cover;
+}

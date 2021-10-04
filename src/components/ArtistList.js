@@ -9,7 +9,7 @@ function ArtistList({ userData }) {
   const maxUser = isWideScreen ? MAX_USER_WIDE : MAX_USER;
   return (
     <section>
-      <h2>Featured artists</h2>
+      <h2 className="section-title">Featured artists</h2>
       <div className="artists-list">
         {userData.slice(0, maxUser).map((user) => (
           <ArtistCard key={user.id} {...user} />
