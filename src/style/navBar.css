@@ -52,7 +52,7 @@
 
 .nav-item {
   display: inline-block;
-  margin: 1rem 8rem;
+  margin: 1rem 6rem;
   font-size: 1.7rem;
   cursor: pointer;
   height: 100%;
@@ -76,7 +76,7 @@
   }
 
   .nav-link {
-    display: block;
+    display: flex;
   }
 
   .sidebar-button {

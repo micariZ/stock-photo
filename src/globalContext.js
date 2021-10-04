@@ -12,6 +12,7 @@ export const GlobalProvider = ({ children }) => {
   const [isSubmenuOpen, setisSubmenuOpen] = useState(false);
   const [location, setLocation] = useState({});
   const [menuContent, setmenuContent] = useState({ page: "", links: [] });
+  const [searchTerm, setSearchTerm] = useState([]);
 
   const listenResizeEvent = () => {
     if (window.innerWidth < SCREEN_SIZE_BREAKPOINT) {
@@ -47,6 +48,7 @@ export const GlobalProvider = ({ children }) => {
   return (
     <GlobalContext.Provider
       value={{
+        searchTerm,
         isSubmenuOpen,
         isWideScreen,
         isSidebarOpen,
@@ -56,6 +58,7 @@ export const GlobalProvider = ({ children }) => {
         closeSidebar,
         openSubmenu,
         closeSubmenu,
+        setSearchTerm,
       }}
     >
       {children}
