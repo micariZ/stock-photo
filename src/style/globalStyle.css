@@ -128,6 +128,7 @@ button {
 
 .show {
   visibility: visible;
+  opacity: 1;
 }
 
 .btn {
@@ -158,6 +159,10 @@ button {
   background-color: var(--theme-color);
   color: var(--font-color-main);
   font-size: 5rem;
+}
+
+.nav_logo {
+  cursor: pointer;
 }
 
 .search-container {
@@ -257,15 +262,30 @@ button {
   font-size: 1.5rem;
 }
 
+.gallery-image-container {
+  position: relative;
+  flex-grow: 1;
+}
+
+.gallery-image-container::after {
+  opacity: 0;
+  content: "Photos provided by Pexels";
+  position: absolute;
+  text-shadow: 1px 1px 2px #3a393f;
+  bottom: 3%;
+  left: 2px;
+  transition: var(--default-transition);
+}
+
+.gallery-image-container:hover:after {
+  opacity: 1;
+}
+
 @media screen and (min-width: 1024px) {
   .grid-6 {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
-  }
-
-  .gallery-image-container {
-    flex-grow: 1;
   }
 
   .gallery-image {

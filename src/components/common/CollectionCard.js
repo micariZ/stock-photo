@@ -1,9 +1,9 @@
 import React from "react";
 import { FaImage } from "react-icons/fa";
 
-function CollectionCard({ name, image_num, thumbnail, imageList }) {
+function CollectionCard({ url, name, image_num, thumbnail, imageList }) {
   return (
-    <div className="collection-card round-border">
+    <a href={url} className="collection-card round-border">
       <figure className="collection-thumb">
         <img className="round-border" src={thumbnail} alt={name} />
       </figure>
@@ -25,7 +25,7 @@ function CollectionCard({ name, image_num, thumbnail, imageList }) {
           <p>{image_num}</p>
         </div>
       </footer>
-    </div>
+    </a>
   );
 }
 

@@ -10,6 +10,7 @@ function GalleryGrid6({ imageData, title, info, loading }) {
   if (loading) {
     return <Loading />;
   }
+
   return (
     <section>
       <header className="gallery-header">
@@ -18,15 +19,15 @@ function GalleryGrid6({ imageData, title, info, loading }) {
       </header>
       <div className="grid-6">
         {imageData.slice(0, maxImg).map((img) => {
-          const { id, src, photographer } = img;
+          const { id, src, photographer, url } = img;
           return (
-            <figure key={id} className="gallery-image-container">
+            <a key={id} href={url} className="gallery-image-container">
               <img
                 className="gallery-image"
                 src={src.large}
                 alt={photographer}
               />
-            </figure>
+            </a>
           );
         })}
       </div>

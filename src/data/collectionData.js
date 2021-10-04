@@ -3,6 +3,7 @@ const collectionList = [
     id: 0,
     name: "nature",
     image_num: 203,
+    url: "https://www.pexels.com/collections/natural-a9hw0ok/",
     thumbnail:
       "https://images.pexels.com/photos/2308893/pexels-photo-2308893.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=250&w=360",
     imageList: [
@@ -16,6 +17,7 @@ const collectionList = [
     id: 1,
     name: "national pancake day",
     image_num: 83,
+    url: "https://www.pexels.com/collections/national-pancake-day-ies02gc/",
     thumbnail:
       "https://images.pexels.com/photos/7071217/pexels-photo-7071217.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=250&w=360",
     imageList: [
@@ -29,6 +31,7 @@ const collectionList = [
     id: 2,
     name: "backgrounds",
     image_num: 500,
+    url: "https://www.pexels.com/discover/pretty-backgrounds/",
     thumbnail:
       "https://images.pexels.com/videos/3409892/free-video-3409892.jpg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=250&w=360",
     imageList: [
@@ -42,6 +45,7 @@ const collectionList = [
     id: 3,
     name: "nature",
     image_num: 203,
+    url: "https://www.pexels.com/collections/natural-a9hw0ok/",
     thumbnail:
       "https://images.pexels.com/photos/2308893/pexels-photo-2308893.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=250&w=360",
     imageList: [
@@ -55,6 +59,7 @@ const collectionList = [
     id: 4,
     name: "national pancake day",
     image_num: 83,
+    url: "https://www.pexels.com/collections/national-pancake-day-ies02gc/",
     thumbnail:
       "https://images.pexels.com/photos/7071217/pexels-photo-7071217.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=250&w=360",
     imageList: [
@@ -68,6 +73,7 @@ const collectionList = [
     id: 5,
     name: "backgrounds",
     image_num: 500,
+    url: "https://www.pexels.com/discover/pretty-backgrounds/",
     thumbnail:
       "https://images.pexels.com/videos/3409892/free-video-3409892.jpg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=250&w=360",
     imageList: [

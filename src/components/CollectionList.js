@@ -25,7 +25,7 @@ function CollectionList({ collectionData }) {
       setNumTranslate(numTranslate + offset);
       setHasRemain(collectionData.length > numTranslate + 2 * offset);
     } else if (action === "prev") {
-      setNumTranslate(numTranslate - offset);
+      setNumTranslate(Math.max(0, numTranslate - offset));
       setHasRemain(true);
     }
   };
