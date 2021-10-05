@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useGlobalContext } from "../../globalContext";
 import "../../style/search.css";
 import Loading from "../common/Loading";

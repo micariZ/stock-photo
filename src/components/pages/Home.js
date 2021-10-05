@@ -3,7 +3,6 @@ import Hero from "../Hero";
 import ArtistList from "../ArtistList";
 import CollectionList from "../CollectionList";
 import GalleryGrid from "../common/GalleryGrid6";
-import imageData from "../../data/imageData";
 import userData from "../../data/userData";
 import collectionData from "../../data/collectionData";
 import useFetch from "../../hooks/useFetch";
@@ -11,8 +10,6 @@ import { CURATED_URL } from "../../config";
 
 function Home() {
   const title = "You might like these";
-  // const info = "based on images you recently viewed";
-
   const [loading, hasError, data] = useFetch(CURATED_URL);
 
   return (
