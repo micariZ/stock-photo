@@ -20,8 +20,6 @@ export default function useFetch(url, param = "") {
         if (response.status === 200) {
           setLoading(false);
           setData(response.data);
-
-          console.log(response);
         } else {
           setLoading(false);
           setHasError(true);

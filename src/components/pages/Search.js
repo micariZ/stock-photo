@@ -12,8 +12,6 @@ function Search() {
   const imgList = data ? data.photos : [];
   const size = Math.ceil(imgList.length / colNum);
 
-  console.log("created");
-
   if (loading) {
     return (
       <div className="search container">
