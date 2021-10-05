@@ -7,7 +7,7 @@ function Hero() {
     <section className="hero">
       <div className="hero-content">
         <h1 className="hero-header">
-          The best free stock photos &#38; videos shared by talented creators.
+          Just a demo project created by Micari Zhou :)
         </h1>
         <SearchBar></SearchBar>
       </div>
