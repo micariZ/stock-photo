@@ -1,14 +1,10 @@
-.search {
+.search-page {
   padding-top: 100px;
 }
-.search-container {
+.search-results {
   display: flex;
   gap: 0 1.5rem;
   margin-top: 2rem;
-}
-
-.search-col {
-  max-width: 30vw;
 }
 
 .search-col .figure {

@@ -262,12 +262,12 @@ button {
   font-size: 1.5rem;
 }
 
-.gallery-image-container {
+.image-container {
   position: relative;
   flex-grow: 1;
 }
 
-.gallery-image-container::after {
+.image-container::after {
   opacity: 0;
   content: "Photos provided by Pexels";
   position: absolute;
@@ -277,7 +277,7 @@ button {
   transition: var(--default-transition);
 }
 
-.gallery-image-container:hover:after {
+.image-container:hover:after {
   opacity: 1;
 }
 

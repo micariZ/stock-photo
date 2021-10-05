@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useGlobalContext } from "../../globalContext";
 import "../../style/search.css";
 import Loading from "../common/Loading";
-import { SEARCH_URL } from "../../config";
+import { SEARCH_URL, SEARCH_COL_NUM_WIDE, SEARCH_COL_NUM } from "../../config";
 import useFetch from "../../hooks/useFetch";
 
 function Search() {
-  const { searchTerm } = useGlobalContext();
+  const { searchTerm, isWideScreen } = useGlobalContext();
   const [loading, hasError, data] = useFetch(SEARCH_URL, searchTerm);
+  const colNum = isWideScreen ? SEARCH_COL_NUM_WIDE : SEARCH_COL_NUM;
+  const imgList = data ? data.photos : [];
+  const size = Math.ceil(imgList.length / colNum);
+
+  console.log("created");
 
   if (loading) {
     return (
@@ -17,64 +22,42 @@ function Search() {
     );
   }
 
+  if (searchTerm.length === 0) {
+    return <div className="error"> Please provide a term to search </div>;
+  }
+
   if (hasError) {
     return <div className="error"> An Error has occurred </div>;
   }
 
-  const imgList = data ? data.photos : [];
-  console.log("data", data);
-  const size = Math.ceil(imgList.length / 3);
-
   return (
-    <div className="search container">
+    <div className="search-page container">
       <h2>Search result for: {searchTerm.join(" ")}</h2>
-      <div className="search-container">
-        <div className="search-col">
-          {imgList.slice(0, size).map((img) => {
-            const { id, src, photographer } = img;
-            return (
-              <figure key={id}>
-                <img
-                  className="search-img"
-                  src={src.large}
-                  alt={photographer}
-                />
-              </figure>
-            );
-          })}
-        </div>
-
-        <div className="search-col">
-          {imgList.slice(size, 2 * size).map((img) => {
-            const { id, src, photographer } = img;
-            return (
-              <figure key={id}>
-                <img
-                  className="search-img"
-                  src={src.large}
-                  alt={photographer}
-                />
-              </figure>
-            );
-          })}
-        </div>
-        <div className="search-col">
-          {imgList.slice(2 * size, 3 * size).map((img) => {
-            const { id, src, photographer } = img;
-            return (
-              <figure key={id}>
-                <img
-                  className="search-img"
-                  src={src.large}
-                  alt={photographer}
-                />
-              </figure>
-            );
-          })}
-        </div>
+      <div className="search-results">
+        {[...Array(colNum).keys()].map((num) => (
+          <SearchCol
+            key={num}
+            lst={imgList.slice(num * size, (num + 1) * size)}
+          />
+        ))}
       </div>
     </div>
   );
 }
+
+const SearchCol = ({ lst }) => {
+  return (
+    <div className="search-col">
+      {lst.map((img) => {
+        const { id, src, photographer, url } = img;
+        return (
+          <a key={id} href={url} className="image-container">
+            <img className="search-img" src={src.large} alt={photographer} />
+          </a>
+        );
+      })}
+    </div>
+  );
+};
 
 export default Search;

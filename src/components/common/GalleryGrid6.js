@@ -21,7 +21,7 @@ function GalleryGrid6({ imageData, title, info, loading }) {
         {imageData.slice(0, maxImg).map((img) => {
           const { id, src, photographer, url } = img;
           return (
-            <a key={id} href={url} className="gallery-image-container">
+            <a key={id} href={url} className="image-container">
               <img
                 className="gallery-image"
                 src={src.large}
